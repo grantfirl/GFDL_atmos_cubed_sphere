@@ -2149,7 +2149,7 @@ contains
          IPD_Statein%tgrs(im,k) = _DBL_(_RL_(Atm(mygrid)%pt(i,j,k1)))
          IPD_Statein%ugrs(im,k) = _DBL_(_RL_(Atm(mygrid)%ua(i,j,k1)))
          IPD_Statein%vgrs(im,k) = _DBL_(_RL_(Atm(mygrid)%va(i,j,k1)))
-         if(associated(IPD_Statein%wgrs) .and. .not. Atm(mygrid)%flagstruct%hydrostatic) then
+         if(size(IPD_Statein%wgrs) > 0 .and. .not. Atm(mygrid)%flagstruct%hydrostatic) then
            IPD_Statein%wgrs(im,k) = _DBL_(_RL_(Atm(mygrid)%w(i,j,k1)))
          endif
          IPD_Statein%vvl(im,k) = _DBL_(_RL_(Atm(mygrid)%omga(i,j,k1)))
